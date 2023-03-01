@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Tous les articles - Mon portfolio
+    link(rel='stylesheet', href='https://unpkg.com/picnic@8.2.2/dist/picnic.min.css')
+  body
+    h1 Tous les articles
+    each post in posts
+      div.article
+        h2= post.title.rendered
+        p!= post.excerpt.rendered
+        a(href=`/article/${post.slug}`) Lire la suite
+    a(href='/') Retour à l'accueil

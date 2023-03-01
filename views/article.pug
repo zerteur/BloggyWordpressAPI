@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title Mon portfolio
+    link(rel='stylesheet', href='https://unpkg.com/tachyons/css/tachyons.min.css')
+  body
+    header.bg-black-90.fixed.w-100.ph3.pv3.ph4-l
+      nav.tc.db.dt-l.w-100.border-box.pa3.lh-copy
+        a.dtc.v-mid.mid-gray.link.dim.w-25.lh-title.mh2(href='/') Mon portfolio
+        div.dtc.v-mid.w-75.tr
+          a.link.dim.dark-gray.f6.f5-l.dib.mh3.ph2-l.mid-gray.bg-animate.hover-bg-light-gray(href='/projects') Projets
+          a.link.dim.dark-gray.f6.f5-l.dib.mh3.ph2-l.mid-gray.bg-animate.hover-bg-light-gray(href='/about') A propos
+    main.pa3.pa5-ns
+      section.pb5-l
+        div.center.measure-wide-l
+          if article
+            article.mv5.pa3.pa5-ns.br2.ba.b--black-10
+              div.tc
+                h3.fw6.f3-m.f2-l.mt0.pt3.pt0-ns= article.title.rendered
+                time.db.f6.mt1.mb4-l.lh-copy.fr-gray
+                  | Publié le #{new Date(article.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+              div.lh-copy.measure-wide-ns.center.pt4.pt5-ns!= article.content.rendered
+          else
+            p Article non trouvé
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js', integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj', crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', integrity='sha384-Q6E/MxI9VqTkIaNM6b9ViZ1Z9XpwLh6HvzBlxpzzZZyKxksdXTJOMaJwU/p1Md+5', crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js', integrity='sha384-eXsJBIVPc8IvHgZEyLw12LQwNy4f/kRb+WlZIBsKp4t4/PDI8CvTtHQyjzsLxskS', crossorigin='anonymous')
