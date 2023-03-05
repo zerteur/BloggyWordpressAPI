@@ -115,3 +115,7 @@ app.post('/send-email', async (req, res) => {
 app.listen(3000, function() {
   console.log('Server is running on port 3000');
 });
+
+
+// Export de app pour permettre à Vercel de charger l'application
+module.exports = app;
