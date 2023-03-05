@@ -3,6 +3,7 @@ const axios = require('axios');
 const app = express();
 
 app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 
 async function fetchArticle(slug) {
@@ -108,12 +109,6 @@ app.post('/send-email', async (req, res) => {
     console.error(error);
     res.status(500).send('Erreur lors de l\'envoi de l\'email');
   }
-});
-
-
-
-app.listen(3000, function() {
-  console.log('Server is running on port 3000');
 });
 
 
